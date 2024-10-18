@@ -1,0 +1,33 @@
+name: Publish package
+
+on:
+  push
+
+jobs:
+  build-nodejs-deb:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt install dpkg ffmpeg libsdl2-2.0-0 adb wget \
+                 gcc git pkg-config meson ninja-build libsdl2-dev \
+                 libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
+                 libswresample-dev libusb-1.0-0 libusb-1.0-0-dev
+
+    - name: Build Deb File
+      run: |
+        bash build.sh
+
+    - name: Automatic Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "2.7"
+        prerelease: false
+        title: "Latest Build 2.7"
+        files: |
+          *.deb

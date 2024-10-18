@@ -1,0 +1,16 @@
+Package: scrcpy
+Source: scrcpy
+Version: 2.7
+Architecture: amd64
+Maintainer: jakbin4747@gmail.com
+Installed-Size: 203
+Depends: libavcodec60 (>= 7:6.0), libavdevice60 (>= 7:6.0), libavformat60 (>= 7:6.0), libavutil58 (>= 7:6.0), libc6 (>= 2.34), libsdl2-2.0-0 (>= 2.0.12), libusb-1.0-0 (>= 2:1.0.16)
+Recommends: adb
+Section: net
+Priority: optional
+Homepage: https://github.com/Genymobile/scrcpy
+Description: Display and control your Android device
+ This application provides display and control of Android devices connected on
+ USB (or over TCP/IP). It does not require any root access.
+ .
+ This package contains the client (desktop) binary.
