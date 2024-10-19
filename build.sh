@@ -16,8 +16,8 @@ mkdir scrcpy/usr
 cp -r share scrcpy/usr/
 
 # copy scrcpy binary
-mkdir scrcpy/bin
-cp scrcpy-git/build-auto/app/scrcpy scrcpy/bin/
+mkdir scrcpy/usr/bin
+cp scrcpy-git/build-auto/app/scrcpy scrcpy/usr/bin/
 
 # copy scrcpy server file
 mkdir -p scrcpy/usr/local/share/scrcpy/

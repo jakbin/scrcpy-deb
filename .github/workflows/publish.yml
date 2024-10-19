@@ -6,6 +6,9 @@ on:
 jobs:
   build-nodejs-deb:
     runs-on: ubuntu-latest
+    container:
+      image: debian:latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -26,8 +29,8 @@ jobs:
       uses: marvinpinto/action-automatic-releases@latest
       with: 
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "2.7"
+        automatic_release_tag: "latest"
         prerelease: false
-        title: "Latest Build 2.7"
+        title: "Latest Build"
         files: |
           *.deb
