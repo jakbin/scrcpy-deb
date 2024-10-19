@@ -7,7 +7,7 @@ jobs:
   build-nodejs-deb:
     runs-on: ubuntu-latest
     container:
-      image: debian:latest
+      image: debian:sid
 
     steps:
     - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
         apt install dpkg ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \
                  libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
-                 libswresample-dev libusb-1.0-0 libusb-1.0-0-dev
+                 libswresample-dev libusb-1.0-0 libusb-1.0-0-dev -y
 
     - name: Build Deb File
       run: |
