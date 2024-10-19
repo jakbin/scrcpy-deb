@@ -15,8 +15,8 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt update
-        sudo apt install dpkg ffmpeg libsdl2-2.0-0 adb wget \
+        apt update
+        apt install dpkg ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \
                  libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
                  libswresample-dev libusb-1.0-0 libusb-1.0-0-dev
