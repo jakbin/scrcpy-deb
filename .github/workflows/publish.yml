@@ -1,7 +1,10 @@
 name: Publish package
 
 on:
-  push
+  push:
+    paths:
+      - build.sh
+      - .github/workflows/publish.yml
 
 jobs:
   build-nodejs-deb:
