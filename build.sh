@@ -4,7 +4,6 @@ git clone https://github.com/Genymobile/scrcpy scrcpy-git
 cd scrcpy-git
 sed -i '21d' install_release.sh
 ./install_release.sh
-
 cd ..
 
 # copy control file
