@@ -1,10 +1,6 @@
 name: Publish package
 
-on:
-  push:
-    paths:
-      - build.sh
-      - .github/workflows/publish.yml
+on: workflow_dispatch
 
 jobs:
   build-nodejs-deb:
