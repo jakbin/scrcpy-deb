@@ -1,7 +1,10 @@
 #!/bin/bash
 
-git clone https://github.com/Genymobile/scrcpy scrcpy-git
-cd scrcpy-git
+VERSION="3.1"
+
+wget https://github.com/Genymobile/scrcpy/archive/refs/tags/v${VERSION}.tar.gz
+tar -xzf v${VERSION}.tar.gz
+cd scrcpy-${VERSION}
 sed -i '21d' install_release.sh
 ./install_release.sh
 cd ..
@@ -16,11 +19,11 @@ cp -r share scrcpy/usr/
 
 # copy scrcpy binary
 mkdir scrcpy/usr/bin
-cp scrcpy-git/build-auto/app/scrcpy scrcpy/usr/bin/
+cp scrcpy-${VERSION}/build-auto/app/scrcpy scrcpy/usr/bin/
 
 # copy scrcpy server file
 mkdir -p scrcpy/usr/local/share/scrcpy/
-cp scrcpy-git/scrcpy-server scrcpy/usr/local/share/scrcpy/ 
+cp scrcpy-${VERSION}/scrcpy-server scrcpy/usr/local/share/scrcpy/
 
 # build deb file
 dpkg -b scrcpy

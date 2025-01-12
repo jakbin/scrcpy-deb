@@ -1,6 +1,10 @@
 name: Publish package
 
-on: workflow_dispatch
+on:
+  push:
+    paths:
+      - build.sh
+      - .github/workflows/publish.yml
 
 jobs:
   build-nodejs-deb:
@@ -12,10 +16,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set Version
+      id: set_version
+      run: |
+        VERSION=$(grep -oP '(?<=VERSION=").*(?=")' build.sh)
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+
     - name: Install Dependencies
       run: |
         apt update
-        apt install dpkg ffmpeg libsdl2-2.0-0 adb wget \
+        apt install wget dpkg ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \
                  libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
                  libswresample-dev libusb-1.0-0 libusb-1.0-0-dev -y
@@ -28,8 +38,8 @@ jobs:
       uses: marvinpinto/action-automatic-releases@latest
       with: 
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
+        automatic_release_tag: "${{ env.VERSION }}"
         prerelease: false
-        title: "Latest Build"
+        title: "Build ${{ env.VERSION }}"
         files: |
           *.deb
