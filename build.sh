@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="3.1"
+VERSION="3.2"
 
 wget https://github.com/Genymobile/scrcpy/archive/refs/tags/v${VERSION}.tar.gz
 tar -xzf v${VERSION}.tar.gz
