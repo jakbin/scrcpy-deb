@@ -1,6 +1,7 @@
 # scrcpy-deb
 
-[![All Downloads](https://img.shields.io/github/downloads/jakbin/scrcpy-deb/total.svg)](https://github.com/jakbin/scrcpy-deb)
+ ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jakbin/scrcpy-deb?label=version&style=flat-square)
+ [![All Downloads](https://img.shields.io/github/downloads/jakbin/scrcpy-deb/total.svg)](https://github.com/jakbin/scrcpy-deb)
 
 deb file for scrcpy tool
 
