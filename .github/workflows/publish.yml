@@ -7,7 +7,7 @@ on:
       - .github/workflows/publish.yml
 
 jobs:
-  build-nodejs-deb:
+  build-scrcpy-deb:
     runs-on: ubuntu-latest
     container:
       image: debian:sid
@@ -40,6 +40,6 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "${{ env.VERSION }}"
         prerelease: false
-        title: "Build ${{ env.VERSION }}"
+        title: "scrcpy build v${{ env.VERSION }}"
         files: |
           *.deb
