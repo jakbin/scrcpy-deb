@@ -1,6 +1,6 @@
 Package: scrcpy
 Source: scrcpy
-Version: 3.2
+Version: 3.3.2
 Architecture: amd64
 Maintainer: jakbin4747@gmail.com
 Installed-Size: 203
