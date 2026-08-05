@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="4.0"
+VERSION="4.1"
 
 
 wget https://github.com/Genymobile/scrcpy/archive/refs/tags/v${VERSION}.tar.gz
